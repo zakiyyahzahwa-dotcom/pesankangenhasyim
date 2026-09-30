@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Untuk Abang Sayang 💗</title>
+<style>
+:root{--pink:#ff8fab;--dark:#4b3443;--cream:#fff8fb}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--dark);overflow:hidden;background:radial-gradient(circle at 20% 10%,#fff 0 12%,transparent 30%),linear-gradient(145deg,#ffe8f0,#f3eaff 55%,#e7f7ff)}
+#app{min-height:100vh;display:grid;place-items:center;padding:18px}
+.card{width:min(440px,100%);max-height:94vh;overflow:auto;text-align:center;padding:30px 23px;border-radius:34px;background:rgba(255,255,255,.78);backdrop-filter:blur(18px);box-shadow:0 25px 70px #80556a22;border:1px solid #fff}
+.screen{display:none;animation:show .55s ease}.screen.active{display:block}@keyframes show{from{opacity:0;transform:translateY(15px) scale(.97)}to{opacity:1;transform:none}}
+.sticker{font-size:65px;display:block;animation:bob 2s infinite}@keyframes bob{50%{transform:translateY(-8px) rotate(2deg)}}
+h1{font-size:30px;line-height:1.15;margin:10px 0}h2{font-size:24px;margin:8px 0}p{line-height:1.7;margin:10px 0}
+button{font:inherit;font-weight:800;border:0;border-radius:999px;padding:13px 19px;margin:7px 3px;background:var(--dark);color:white;box-shadow:0 9px 20px #49384422;cursor:pointer}
+button.alt{background:#ffe5ee;color:#9d536b}.mini{font-size:12px;color:#927d8c}.tag{display:inline-block;background:#fff0f5;border-radius:99px;padding:7px 11px;margin:3px;font-size:12px}
+.letter{background:#fffdfd;text-align:left;padding:20px;border-radius:22px;border:1px dashed #f0b2c5;margin-top:14px}
+.letter b{color:#bd607d}.meter{height:16px;background:#eee4eb;border-radius:99px;overflow:hidden;margin:18px 0 5px}.fill{height:100%;width:100%;background:linear-gradient(90deg,#ff9db6,#c2a1ed);animation:pulse 1.5s infinite}@keyframes pulse{50%{filter:brightness(1.08)}}
+.option{width:80%;margin:7px auto;display:block}.no{position:relative}
+.floating{position:fixed;inset:0;pointer-events:none;overflow:hidden}.floating span{position:absolute;bottom:-50px;animation:up linear forwards;opacity:.65}@keyframes up{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.badge{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#a48798}
+#music{position:fixed;right:14px;top:14px;width:42px;height:42px;padding:0;margin:0;border-radius:50%;font-size:18px;z-index:5}
+</style>
+</head>
+<body>
+<div class="floating" id="float"></div>
+<button id="music" onclick="toggleMusic()" title="musik">♫</button>
+
+<div id="app"><div class="card">
+
+<section class="screen active" id="s1">
+<span class="sticker">💌</span><div class="badge">pesan rahasia untuk</div>
+<h1>ABANG SAYANG<br>HASYIM 🤏🏻</h1>
+<p>Ada sesuatu dari Kiya.<br>Tapi jangan geer dulu ya. 😌</p>
+<span class="tag">⚠️ jangan serius-serius</span><span class="tag">💗 ada rasa</span>
+<br><button onclick="start()">BUKA PESANNYA ✨</button>
+<p class="mini">🔊 pencet tombol musik di pojok kalau mau ditemani lagu</p>
+</section>
+
+<section class="screen" id="s2">
+<span class="sticker">🧸💗</span><h2>Eh abang...</h2>
+<p>Sebelum baca sampai akhir,<br>jawab satu pertanyaan penting.</p>
+<h2>Abang kangen Kiya nggak? 👀</h2>
+<button class="option" onclick="yes()">IYA 🥺</button>
+<button class="option alt no" onclick="nope(this)">NGGAK 😌</button>
+<p id="reply" class="mini"></p>
+</section>
+
+<section class="screen" id="s3">
+<span class="sticker">🚨😭</span><div class="badge">hasil pemeriksaan</div>
+<h2>Tingkat Kangen Kiya</h2><div class="meter"><div class="fill"></div></div>
+<h1>100% 💗</h1>
+<p>Setelah dilakukan penelitian mendalam oleh<br><b>Departemen Per-Kangen-an Kiya</b>...</p>
+<p>terbukti bahwa penyebab utamanya adalah:</p>
+<h2>ABANG YANG TENGIL ITU. 🫵🏻</h2>
+<button onclick="next(4)">Lanjut, jangan geer →</button>
+</section>
+
+<section class="screen" id="s4">
+<span class="sticker">🙈🌷</span><h2>Sebenarnya...</h2>
+<p>Kiya tuh sering bilang,</p>
+<p><i>“Ah, biasa aja kali...”</i></p>
+<p>Padahal kenyataannya:</p>
+<h1>“YALLAH KOK KANGEN BANGET 😭”</h1>
+<p>Terus pura-pura sibuk lagi. WKWK.</p>
+<button onclick="next(5)">Buka surat kecil 💌</button>
+</section>
+
+<section class="screen" id="s5">
+<div class="badge">surat kecil dari kiya</div>
+<div class="letter">
+<p><b>Dear abang sayang, gantengku, cuamii 🤍</b></p>
+<p>Aku cuma mau bilang kalau aku kangen kamu.</p>
+<p>Kangen ngobrol sama kamu, kangen ketawa sama kamu, kangen tingkah kamu yang kadang bikin Kiya geleng-geleng kepala 😭.</p>
+<p>Entah kenapa, di antara banyak hal yang bisa bikin senyum, kamu tetap salah satu alasan yang paling sering muncul.</p>
+<p>Jadi kalau hari ini kamu tiba-tiba senyum sendiri setelah buka website ini...</p>
+<p><b>yaudah, anggap aja itu hadiah kecil dari Kiya. 🎀</b></p>
+<p>Jangan lupa kangen balik ya, abang.</p>
+<p>— <b>Kiya yang katanya santai padahal bikin website karena kangen</b> 😭💗</p>
+</div>
+<button onclick="next(6)">Masih ada satu kejutan 🎁</button>
+</section>
+
+<section class="screen" id="s6">
+<span class="sticker">🎁🐻💗</span><h2>Hadiah terakhir...</h2>
+<p>Tekan kotaknya.</p>
+<button style="font-size:45px;background:#fff0f5" onclick="gift()">🎁</button>
+<p id="gifttext" class="mini"></p>
+</section>
+
+<section class="screen" id="s7">
+<span class="sticker">🥹🫂💗</span>
+<h1>Ketahuan deh.</h1>
+<p>Jadi bukan Kiya aja yang kangen, kan? 😌</p>
+<p><b>Sini dulu, abang sayang.</b></p>
+<h1>🫂🤍🫂</h1>
+<p>Terima kasih sudah jadi salah satu bagian paling menyenangkan dari hari-hari Kiya.</p>
+<p class="mini">Kalau suatu saat Kiya bilang “nggak kangen”,<br>tolong jangan percaya. Website ini punya bukti. 😭</p>
+<button onclick="again()">Baca lagi dari awal 💌</button>
+</section>
+
+</div></div>
+
+<script>
+let audioCtx=null,playing=false,notes=[261.63,329.63,392,329.63,293.66,349.23,440,349.23],timer;
+function tone(f,d=.28){
+ if(!audioCtx)return;let o=audioCtx.createOscillator(),g=audioCtx.createGain();
+ o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.0001,audioCtx.currentTime);
+ g.gain.exponentialRampToValueAtTime(.055,audioCtx.currentTime+.03);
+ g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+d);
+ o.connect(g).connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+d+.03)
+}
+function toggleMusic(){
+ if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+ if(audioCtx.state==='suspended')audioCtx.resume();
+ playing=!playing;document.getElementById('music').textContent=playing?'❚❚':'♫';
+ if(playing){let i=0;timer=setInterval(()=>{if(playing){tone(notes[i%notes.length]);i++}},430)}
+ else clearInterval(timer);
+}
+function start(){if(!playing)toggleMusic();next(2)}
+function next(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');sparkles(8)}
+function yes(){document.getElementById('reply').textContent='Hehe... ketahuan. Kiya tahu kok. 🤭💗';setTimeout(()=>next(3),900)}
+function nope(b){b.classList.add('shake');document.getElementById('reply').textContent='Tombol ini sedang tidak tersedia untuk abang yang sebenarnya kangen. 😭';setTimeout(()=>b.classList.remove('shake'),350)}
+function gift(){document.getElementById('gifttext').innerHTML='<b>Isinya sederhana:</b><br>peluk virtual, satu “aku kangen”, dan izin buat senyum hari ini. 🫂💗';sparkles(30)}
+function again(){next(1)}
+function sparkles(n){for(let i=0;i<n;i++){let x=document.createElement('span');x.textContent=['💗','♡','✨','🌷','🎀','🧸'][Math.floor(Math.random()*6)];x.style.left=Math.random()*100+'vw';x.style.fontSize=14+Math.random()*22+'px';x.style.animationDuration=4+Math.random()*4+'s';document.getElementById('float').appendChild(x);setTimeout(()=>x.remove(),8000)}}
+sparkles(12);
+</script>
+</body></html>
